@@ -15,9 +15,7 @@ main = hakyll $ do
         route   idRoute
         compile compressCssCompiler
 
-    match "bio.markdown" $ do
-       route $ setExtension "html"
-       compile $ pandocCompiler
+    match "templates/*" $ compile templateCompiler
 
     match "index.html" $ do
         route idRoute
@@ -27,19 +25,21 @@ main = hakyll $ do
                 >>= loadAndApplyTemplate "templates/default.html" defaultContext
                 >>= relativizeUrls
 
-    match "templates/*" $ compile templateCompiler
+    match "posts/*" $ do
+        route   $ setExtension ".html"
+        compile $ do
+            pandocCompiler
+                >>= loadAndApplyTemplate "templates/post.html" postCtx
+                >>= loadAndApplyTemplate "templates/default.html" defaultContext
+                >>= relativizeUrls
 
 --------------------------------------------------------------------------------
 
 bioCtx :: Context String
 bioCtx =
-    field "bio" (\_ -> loadBody "bio.markdown") `mappend`
---    (constField "bio" "This is my bio") `mappend`
+    field "bio" (\_ -> loadBody "posts/bio.markdown") `mappend`
     defaultContext
 
--- bio :: Compiler String
--- bio = do
---   bioMd <- load "bio/bio.md"
---   bioTpl <- loadBody "templates/bio.html"
---   bio <- applyTemplateList bioTpl defaultContext [bioMd]
---   return bio
+postCtx :: Context String
+postCtx = 
+    (modificationTimeField "mtime" "%U") `mappend`defaultContext
