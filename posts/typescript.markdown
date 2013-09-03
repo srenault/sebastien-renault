@@ -18,11 +18,11 @@ It  means that Javascript is Typescript compliant and Typescript brings some new
 
 ### How does it work ?
 In order to type all the existing Javascript code, Typescript introduce something called "declaration files (*.d.ts)".
-A declaration file is a file where you transpose your Javascript code into Typescript definitions of objects, functions, classes and interfaces.
+A declaration file is a file where you transpose your Javascript code into Typescript definitions.
 In that way, Typescript is able to perform type checking on Javascript code.
-On this [repository](https://github.com/borisyankov/DefinitelyTyped), you can find a lot of declaration files for many libraries.
+This [repository](https://github.com/borisyankov/DefinitelyTyped) hosts a lot of declaration files for many libraries.
 
-By default, Typescript use a declaration file named "lib.d.ts".
+Something else you have to know is that under the hood, Typescript use a declaration file named "lib.d.ts".
 It's role is to type all the ECMAScript APIs (Window, Object, Function etc...).
 I will tell you more about this file in the following paragraph.
 
@@ -38,7 +38,7 @@ So, Typescript compiler will not compile if you use some (new) features from HTM
 I can understand that it would be very hard to maintain a such file that define ECMAScript for each browser and each version of them.  
 So, Is it the right way to do ?
 
-Another annoying point is that we don't know where to get a declaration file for a specific version of one Javascript library (like JQuery).
+Another annoying point is that we don't know where to get a declaration file for a specific version of one Javascript library.
 One anwser could be to create a kind of package manager devote to declaration files.
 
 ## Typescript in the real world.
@@ -66,16 +66,15 @@ The [second one](https://github.com/srenault/typescript-project-skeletons/tree/m
 My idea is to make a compromise and use type checking only on the code I write.
 In order to do that, there are two two things to do:
 
-* Declare external Javascript libraries as "any" type. Don't use theirs declaration files.
-  For instance, to declare "underscore" as "any" type, Typescript offer this syntax:
+* Declare external Javascript libraries as "any" type. Don't use theirs declaration files.  
+  To explicitly not type checked a library, follow this exemple:
 
         declare var _: any;
         _.anything; //No compile error.
 
 * Don't use the default provided "lib.d.ts" declaration file.
-  Like external Javascript libraries, declare "window" as "any" type.
-  Declare each property of "window" as "any" type.
-  To do that, I created a [script]() that generate a declaration file.
+  Like external Javascript libraries, declare "window" and all properties of it as "any" type.
+  This can't be done by hand. [Here]() a script that generate for you the corresponding declaration file.
 
 The "grunt-typescript" plugin has an "nolib" option.
 When having the "true" value, the internal "lib.d.ts" declaration file isn't used.
