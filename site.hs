@@ -33,7 +33,6 @@ main = hakyll $ do
                 >>= loadAndApplyTemplate "templates/disqus.html" defaultContext
                 >>= loadAndApplyTemplate "templates/default.html" defaultContext
                 >>= relativizeUrls
-
 --------------------------------------------------------------------------------
 
 bioCtx :: Context String
