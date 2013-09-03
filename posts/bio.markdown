@@ -1,5 +1,4 @@
 ---
-title: Hello world
+title: Sébastien RENAULT
 ---
 
-Hello world !

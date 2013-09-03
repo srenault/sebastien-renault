@@ -29,7 +29,8 @@ main = hakyll $ do
         route   $ setExtension ".html"
         compile $ do
             pandocCompiler
-                >>= loadAndApplyTemplate "templates/post.html" postCtx
+                >>= loadAndApplyTemplate "templates/post.html" defaultContext
+                >>= loadAndApplyTemplate "templates/disqus.html" defaultContext
                 >>= loadAndApplyTemplate "templates/default.html" defaultContext
                 >>= relativizeUrls
 
@@ -39,7 +40,3 @@ bioCtx :: Context String
 bioCtx =
     field "bio" (\_ -> loadBody "posts/bio.markdown") `mappend`
     defaultContext
-
-postCtx :: Context String
-postCtx = 
-    (modificationTimeField "mtime" "%U") `mappend`defaultContext
