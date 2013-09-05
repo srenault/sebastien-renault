@@ -17,11 +17,15 @@ main = hakyll $ do
 
     match "templates/*" $ compile templateCompiler
 
+    match "home/*" $ do
+       route idRoute
+       compile $ pandocCompiler
+
     match "index.html" $ do
         route idRoute
         compile $ do
             getResourceBody
-                >>= applyAsTemplate defaultContext
+                >>= applyAsTemplate bioCtx
                 >>= loadAndApplyTemplate "templates/default.html" defaultContext
                 >>= relativizeUrls
 
@@ -34,3 +38,8 @@ main = hakyll $ do
                 >>= loadAndApplyTemplate "templates/default.html" defaultContext
                 >>= relativizeUrls
 --------------------------------------------------------------------------------
+
+bioCtx :: Context String
+bioCtx =
+    field "bio" (\_ -> loadBody "home/bio.markdown") `mappend`
+    defaultContext
