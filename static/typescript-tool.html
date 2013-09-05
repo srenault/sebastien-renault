@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>$title$</title>
+    <link rel="stylesheet" type="text/css" href="../css/default.css" />
+  </head>
+  <body>
+    <h1>Typescript Tool</h1>
+    <pre>
+      <code class="predifined">
+interface Function {
+    apply(thisArg: any, argArray?: any): any;
+    call(thisArg: any, ...argArray: any[]): any;
+    bind(thisArg: any, ...argArray: any[]): any;
+
+    prototype: any;
+    length: number;
+
+    // Non-standard extensions
+    arguments: any;
+    caller: Function;
+}
+
+declare var Function: {
+    new (...args: string[]): Function;
+    (...args: string[]): Function;
+    prototype: Function;
+}
+</code>
+      <code class="generated"></code>
+    </pre>
+    <script type="text/javascript">
+        var blackList = ['Function', 'undefined'];
+        var body = document.querySelector('body code.generated');
+        Object.getOwnPropertyNames(window).forEach(function(prop) {
+            if(blackList.indexOf(prop) == -1) {
+                var declaration = document.createTextNode('declare var ' + prop + ': any;');
+                var br = document.createElement('br');
+                body.appendChild(br);
+                body.appendChild(declaration);
+            }
+        });
+    </script>
+  </body>
+</html>

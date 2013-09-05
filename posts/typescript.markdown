@@ -29,7 +29,7 @@ In order to use a declaration file inside your project, you have to use this syn
 
 Something else you have to know about declaration files is that Typescript use by default a declaration file named "lib.d.ts".
 It's role is to type all the ECMAScript APIs (window, Object, Function etc...).
-Because "window" object is typed (Window interface), Typescript will not allow you to write this code:
+It's means that now "window" object is typed (Window interface), Typescript will not allow you to write this code:
 
     window.App = {};
     
@@ -47,7 +47,7 @@ If you want to have type checking on this library, you will have no choice that 
 Indeed, each time you release a new version of your library, you have to update the declaration file.
 That can be very tedious.
 
-Regarding to the declaration file "lib.d.ts", as I said previously, this one is provided with the Typescript compiler and has the hard mission to define all ECMAScript APIs.
+Regarding to the declaration file "lib.d.ts", this one is provided with the Typescript compiler and has the hard mission to define all ECMAScript APIs.
 More exactly, it defines the ECMAScript specifically for several versions of Internet Explorer.
 So, Typescript compiler will throw you an error whenever you use a feature that is unavailable in IE but not necessarily in others browsers.
 I can understand that it would be very hard (even impossible ?) to maintain a declaration file that define ECMAScript for each browser and each version of them.
@@ -80,12 +80,12 @@ The [first one](https://github.com/srenault/typescript-project-skeletons/tree/ma
 The [second one](https://github.com/srenault/typescript-project-skeletons/tree/master/with-play) offers one valid way to intergrate Typescript code into a play framework project.  
 I suggest you take a moment to understand how theses projects are organized and build.
 
-*Note: I aware of some [sbt plugins](https://github.com/mumoshu/play2-typescript) that compile Typescript, but I prefer use some front technology like "grunt" to manage my "front" base code.*
+*Note: I aware of some [playframework sbt plugins](https://github.com/mumoshu/play2-typescript) that compile Typescript, but I prefer use some front technology like "grunt" to manage my "front" base code.*
 
 ### Clever type checking.
 My idea is to make a compromise and use type checking only on the code I write.
 I don't want to be bothered by any outdated declaration files.
-In order to do that, follow theses steps:
+Here how I proceed to get whant I want:
 
 * Declare external Javascript libraries as "any" type.
   That's done like this:
