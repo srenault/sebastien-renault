@@ -17,6 +17,10 @@ main = hakyll $ do
 
     match "templates/*" $ compile templateCompiler
 
+    match "static/*" $ do
+       route idRoute
+       compile copyFileCompiler
+
     match "home/*" $ do
        route idRoute
        compile $ pandocCompiler

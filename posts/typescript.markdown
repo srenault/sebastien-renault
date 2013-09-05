@@ -100,7 +100,7 @@ Here how I proceed to get whant I want:
   When set to "true", the declaration file "lib.d.ts" is not used during the Typescript compilation.
 
 * Like external Javascript libraries, declare "window" object and its properties as "any" type.
-  This can be done easily thanks to this [tool](). This one will generate for you the corresponding declaration file.
+  This can be done easily thanks to this [tool](../static/typescript-tool.html). This one will generate for you the corresponding declaration file.
 
 ### Functionnal programming.
 Typescript can give more than just typing to Javascript.
