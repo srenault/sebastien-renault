@@ -2,6 +2,8 @@
 title: Typescript
 ---
 
+# Typescript
+
 There are a lot of attempts to replace Javascript by another language [[see here]](https://github.com/jashkenas/coffee-script/wiki/List-of-languages-that-compile-to-JS).
 One of the main reason to create a language that compile to Javascript is to bring static typing on client side.
 In 2012, Microsoft released a new language named Typescript that does this work.
@@ -59,11 +61,11 @@ It would be very cool to have:
 
     tdm install underscore //Stand for "Typescript declaration files manager"
 
-## Typescript in the real world.
+## Typescript in the real world
 Despite of theses drawbacks, I think I found a way to make Typescript more confortable to use.
 That's what we are talking about from now !
 
-### Environnement developpment.
+### Environnement developpment
 Having a cosy environnement developpment is very important to be effective.
 But it's more a personnal choice that an universal rule.
 Nevertheless, I give you below a description of my own environnement:
@@ -82,7 +84,7 @@ I suggest you take a moment to understand how theses projects are organized and 
 
 *Note: I aware of some [playframework sbt plugins](https://github.com/mumoshu/play2-typescript) that compile Typescript, but I prefer use some front technology like "grunt" to manage my "front" base code.*
 
-### Clever type checking.
+### Clever type checking
 My idea is to make a compromise and use type checking only on the code I write.
 I don't want to be bothered by any outdated declaration files.
 Here how I proceed to get whant I want:
@@ -100,15 +102,15 @@ Here how I proceed to get whant I want:
   When set to "true", the declaration file "lib.d.ts" is not used during the Typescript compilation.
 
 * Like external Javascript libraries, declare "window" object and its properties as "any" type.
-  This can be done easily thanks to this [tool](../static/typescript-tool.html). This one will generate for you the corresponding declaration file.
+  This can be done easily thanks to this [tool](../misc/typescript-tool.html). This one will generate for you the corresponding declaration file.
 
-### Functionnal programming.
+### Functionnal programming
 Typescript can give more than just typing to Javascript.
 My idea is to provide to Typescript developper a *core set of functionnal libraries*.
 I already [started](https://github.com/srenault/typescript-fp) to create a functionnal library that offer immutable structure like "List" and "Option".
 It's just an inception so, feel free to help me on this task.
 
-## The End.
+## The End
 I see Typescript as a real alternative to create front-end application.
 The fact that it is a superset of Javascript is its biggest strength.
 In my opinion, It has more chance to be adopted by front-end developpers than any others languages that compile to Javascript.

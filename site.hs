@@ -17,7 +17,7 @@ main = hakyll $ do
 
     match "templates/*" $ compile templateCompiler
 
-    match "static/*" $ do
+    match "misc/*" $ do
        route idRoute
        compile copyFileCompiler
 
