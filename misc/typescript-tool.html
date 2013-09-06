@@ -2,36 +2,32 @@
 <html>
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <title>$title$</title>
+    <title>Typescript - tool</title>
     <link rel="stylesheet" type="text/css" href="../css/default.css" />
   </head>
   <body>
-    <h1>Typescript Tool</h1>
+    <h1>Typescript tool</h1>
+    This script declares any properties of window object as 'any' type.
     <pre>
-      <code class="predifined">
-interface Function {
-    apply(thisArg: any, argArray?: any): any;
-    call(thisArg: any, ...argArray: any[]): any;
-    bind(thisArg: any, ...argArray: any[]): any;
-
-    prototype: any;
-    length: number;
-
-    // Non-standard extensions
-    arguments: any;
-    caller: Function;
-}
-
-declare var Function: {
-    new (...args: string[]): Function;
-    (...args: string[]): Function;
-    prototype: Function;
-}
-</code>
-      <code class="generated"></code>
+      <code>
+var blackList = ['undefined'];
+var body = document.querySelector('body code.generated');
+Object.getOwnPropertyNames(window).forEach(function(prop) {
+    if(blackList.indexOf(prop) == -1) {
+        var declaration = document.createTextNode('declare var ' + prop + ': any;');
+        var br = document.createElement('br');
+        body.appendChild(br);
+        body.appendChild(declaration);
+    }
+});
+      </code>
+    </pre>
+    This result to the following declaration file:
+    <pre>
+        <code class="generated"></code>
     </pre>
     <script type="text/javascript">
-        var blackList = ['Function', 'undefined'];
+        var blackList = ['undefined'];
         var body = document.querySelector('body code.generated');
         Object.getOwnPropertyNames(window).forEach(function(prop) {
             if(blackList.indexOf(prop) == -1) {

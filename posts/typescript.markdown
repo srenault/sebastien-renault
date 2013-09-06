@@ -80,7 +80,7 @@ Nevertheless, I give you below a description of my own environnement:
 My "[typescript-project-skeletons](https://github.com/srenault/typescript-project-skeletons)" repository presents two kinds of Typescript projects configuration.
 The [first one](https://github.com/srenault/typescript-project-skeletons/tree/master/no-server) is a simple static project (HTML, Typescript and CSS).
 The [second one](https://github.com/srenault/typescript-project-skeletons/tree/master/with-play) offers one valid way to intergrate Typescript code into a play framework project.  
-I suggest you take a moment to understand how theses projects are organized and build.
+I suggest that you take a moment to understand how theses projects are organized and build.
 
 *Note: I aware of some [playframework sbt plugins](https://github.com/mumoshu/play2-typescript) that compile Typescript, but I prefer use some front technology like "grunt" to manage my "front" base code.*
 
@@ -102,7 +102,7 @@ Here how I proceed to get whant I want:
   When set to "true", the declaration file "lib.d.ts" is not used during the Typescript compilation.
 
 * Like external Javascript libraries, declare "window" object and its properties as "any" type.
-  This can be done easily thanks to this [tool](../misc/typescript-tool.html). This one will generate for you the corresponding declaration file.
+  This can be done easily by using this [script](../misc/typescript-tool.html).
 
 ### Functionnal programming
 Typescript can give more than just typing to Javascript.
