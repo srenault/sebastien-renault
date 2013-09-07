@@ -31,7 +31,7 @@ In order to use a declaration file inside your project, you have to use this syn
 
 Something else you have to know about declaration files is that Typescript use by default a declaration file named "lib.d.ts".
 It's role is to type all the ECMAScript APIs (window, Object, Function etc...).
-It's means that now "window" object is typed (Window interface), Typescript will not allow you to write this code:
+It's means that "window" object is typed (Window interface), Typescript will not allow you to write this code:
 
     window.App = {};
     
