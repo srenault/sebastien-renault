@@ -1,5 +1,6 @@
 * {
-    -webkit-font-smoothing: antialiased
+    -webkit-font-smoothing: antialiased;
+    font-family: 'Open Sans', sans-serif;
 }
 
 body {
@@ -30,10 +31,12 @@ header {
     padding: 12px 0px 12px 0px;
 }
 
+a {
+    color: #06C;
+}
 
 #content a {
     text-decoration: none;
-    color: #06C;
 }
 
 #content a:hover {
@@ -42,16 +45,32 @@ header {
 
 #comments {
     border-top: 1px solid;
-    padding-top: 20px;
-    margin-top: 40px;
+    border-bottom: 1px solid;
+    margin: 40px 0 40px 0;
 }
 
 footer {
+    background: rgba(255, 255, 255, 0.94);
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
     color: #555;
     font-size: 12px;
-    margin-top: 30px;
-    padding: 12px 0px 12px 0px;
     text-align: right;
+    border-top: 1px solid #000;
+}
+
+footer a {
+    text-decoration: none;
+    font-size: 16px;
+    display: inline-block;
+    padding: 10px;
+}
+
+footer .contact-me:hover {
+    background: #06C;
+    color: #FFF;
 }
 
 pre {
@@ -69,6 +88,56 @@ code {
     margin-top: 30px;
 }
 
+#bio {
+    position: relative;
+}
+
 #bio > p:first-child {
     line-height: 1.2;
+}
+
+#twitter {
+    position: absolute;
+    top: -530px;
+    right: -375px;
+    width: 360px;
+    transition: transform .25;
+    -webkit-transition: -webkit-transform .25s;
+    -moz-transition: -moz-transform .25s;
+}
+
+#twitter.open {
+    -webkit-transform: translate3d(-385px,0,0);
+    -moz-transform: translate3d(10px,0,0);
+    display: inline-block;
+}
+
+.contact-me {
+    font-weight: bold;
+}
+
+.home {
+    position: absolute;
+    left: 0;
+}
+
+.home:before {
+    font-family: 'fontello';
+    content: '\e800';
+    cursor: pointer;
+}
+
+#twitter.open + .contact-me {
+    background: #06C;
+    color: #FFF;
+}
+
+.figure {
+    position: absolute;
+    top: 5px;
+    left: -150px;
+}
+
+.figure img {
+    height: 100px;
 }
