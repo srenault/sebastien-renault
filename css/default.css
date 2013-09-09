@@ -125,6 +125,7 @@ code {
     font-family: 'fontello';
     content: '\e800';
     cursor: pointer;
+    margin-right: 5px;
 }
 
 #twitter.open + .contact-me {
