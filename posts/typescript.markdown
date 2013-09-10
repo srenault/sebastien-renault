@@ -52,7 +52,7 @@ That can be very tedious.
 Regarding to the declaration file "lib.d.ts", this one is provided with the Typescript compiler and has the hard mission to define all ECMAScript APIs.
 More exactly, it defines the ECMAScript specifically for several versions of Internet Explorer.
 So, Typescript compiler will throw you an error whenever you use a feature that is unavailable in IE but not necessarily in others browsers.
-I can understand that it would be very hard (even impossible ?) to maintain a declaration file that define ECMAScript for each browser and each version of them.
+I can understand that it would be very hard (even impossible ?) to maintain a declaration file that defines ECMAScript for each browser and each version of them.
 That's why, I have some doubts about the use of this file.
 
 Another annoying point is that we don't know where to get a declaration file for a specific version of one Javascript library.
@@ -62,12 +62,12 @@ It would be very cool to have:
     tdm install underscore
 
 ## Typescript in the real world
-Despite of these drawbacks, I think I found a way to make Typescript more confortable to use.
+Despite these drawbacks, I think I found a way to make Typescript more confortable to use.
 That's what we are talking about from now !
 
-### Environnement developpment
-Having a cosy environnement developpment is very important to be effective.
-But it's more a personnal choice that an universal rule.
+### Environnement development
+Having a cosy environnement development is very important to be effective.
+But it's more a personal choice that an universal rule.
 Nevertheless, I give you below a description of my own environnement:
 
 * I don't use Visual Studio.
@@ -87,7 +87,7 @@ I suggest that you take a moment to understand how these projects are organized 
 ### Clever type checking
 My idea is to make a compromise and use type checking only on the code I write.
 I don't want to be bothered by any outdated declaration files.
-Here how I proceed to get what I want:
+Here is how I proceed to get what I want:
 
 * Declare external Javascript libraries as "any" type:
 
@@ -103,7 +103,7 @@ Here how I proceed to get what I want:
 * Like external Javascript libraries, declare "window" object and its properties as "any" type.
   This can be done easily by using this [script](../misc/typescript-tool.html).
 
-### Functionnal programming
+### Functional programming
 Typescript can give more than just add typing to Javascript.
 My idea is to provide to Typescript developper a *core set of functionnal libraries*.
 I already [started](https://github.com/srenault/typescript-fp) to create a functionnal library that offers immutable structure like "List" and "Option".
