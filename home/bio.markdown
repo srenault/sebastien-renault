@@ -2,9 +2,9 @@
 
 I'm Sébastien Renault.  
 I'm a sofware designer.  
-I'm interested in everything that are linked to the Web.  
 I'm currently working at [Zenexity](http://zenexity.com), a french Web Oriented Architecture company.  
-I like to learn programming languages.  
-My code editor is emacs. You can find my conf [[here]](https://github.com/srenault/emacsconf).
+I love the Web.  
+I love to learn programming languages.  
+My code editor is Emacs. You can find my conf [[here]](https://github.com/srenault/emacsconf).
 
 Follow me on [twitter](http://twitter.com/srenaultcontact) and discover my work on [github](http://github.com/srenault).

@@ -1,5 +1,5 @@
 ---
-title: Typescript
+title: What is Typescript and How can we use it ?
 ---
 
 # Typescript
@@ -59,7 +59,7 @@ Another annoying point is that we don't know where to get a declaration file for
 One anwser could be to create a kind of package manager devote to declaration files.
 It would be very cool to have:
 
-    tdm install underscore //Stand for "Typescript declaration files manager"
+    tdm install underscore
 
 ## Typescript in the real world
 Despite of these drawbacks, I think I found a way to make Typescript more confortable to use.
@@ -111,6 +111,6 @@ It's just an inception so, feel free to help me on this task.
 
 ## The End
 I see in Typescript a real alternative to create front-end application.
-The fact that it is a superset of Javascript (and close to ECMAScript 6) make it very attractive.
+The fact that it is a superset of Javascript make it very attractive.
 In my opinion, It has more chance to be adopted by front-end developpers than any others languages that compiles to Javascript.
 Good luck !
