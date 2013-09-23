@@ -106,7 +106,7 @@ Here is how I proceed to get what I want:
 ### Functional programming
 Typescript can give more than just add typing to Javascript.
 My idea is to provide to Typescript developper a *core set of functionnal libraries*.
-I already [started](https://github.com/srenault/typescript-fp) to create a functionnal library that offers immutable structure like "List" and "Option".
+I already [started](https://github.com/srenault/immutable.ts) to create a functionnal library that offers immutable structure like "List" and "Option".
 It's just an inception so, feel free to help me on this task.
 
 ## The End
